@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@tanstack/react-table':
+    specifier: ^8.20.1
+    version: 8.20.1(react-dom@18.3.1)(react@18.3.1)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -736,6 +739,23 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@tanstack/react-table@8.20.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-PJK+07qbengObe5l7c8vCdtefXm8cyR4i078acWrHbdm8JKw1ES7YpmOtVt9ALUVEEFAHscdVpGRhRgikgFMbQ==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@tanstack/table-core': 8.20.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
+  /@tanstack/table-core@8.20.1:
+    resolution: {integrity: sha512-5Ly5TIRHnWH7vSDell9B/OVyV380qqIJVg7H7R7jU4fPEmOD4smqAX7VRflpYI09srWR8aj5OLD2Ccs1pI5mTg==}
+    engines: {node: '>=12'}
+    dev: false
 
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
