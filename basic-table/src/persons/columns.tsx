@@ -4,7 +4,6 @@ export type Person = {
   id: string;
   firstName: string;
   lastName: string;
-  email: string;
   age: number;
   category: "バックエンド" | "フロントエンド" | "インフラ" | "その他";
   skills: string;
@@ -23,10 +22,6 @@ export const columns: ColumnDef<Person>[] = [
   {
     accessorKey: "lastName",
     header: "名",
-  },
-  {
-    accessorKey: "email",
-    header: "メールアドレス",
   },
   {
     accessorKey: "age",
