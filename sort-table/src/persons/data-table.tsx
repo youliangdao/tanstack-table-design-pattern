@@ -5,7 +5,6 @@ import {
   getSortedRowModel,
   SortingState,
   useReactTable,
-  OnChangeFn,
 } from "@tanstack/react-table";
 
 import {
