@@ -7,7 +7,6 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  Header,
   SortingState,
   useReactTable,
   VisibilityState,
@@ -37,7 +36,6 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
   TableHeader,
   TableRow,
 } from "../components/ui/table";
@@ -62,43 +60,12 @@ import {
   DropdownMenuContent,
   DropdownMenuCheckboxItem,
 } from "../components/ui/dropdown-menu";
+import { DraggableTableHeader } from "./data-table-column-header";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
-
-const DraggableTableHeader = <TData,>({
-  header,
-}: {
-  header: Header<TData, unknown>;
-}) => {
-  const { attributes, isDragging, listeners, setNodeRef, transform } =
-    useSortable({
-      id: header.column.id,
-    });
-
-  const style: CSSProperties = {
-    opacity: isDragging ? 0.8 : 1,
-    position: "relative",
-    transform: CSS.Translate.toString(transform), // translate instead of transform to avoid squishing
-    transition: "width transform 0.2s ease-in-out",
-    whiteSpace: "nowrap",
-    width: header.column.getSize(),
-    zIndex: isDragging ? 1 : 0,
-  };
-
-  return (
-    <TableHead colSpan={header.colSpan} ref={setNodeRef} style={style}>
-      {header.isPlaceholder
-        ? null
-        : flexRender(header.column.columnDef.header, header.getContext())}
-      <button {...attributes} {...listeners}>
-        🟰
-      </button>
-    </TableHead>
-  );
-};
 
 const DragAlongCell = <TData,>({ cell }: { cell: Cell<TData, unknown> }) => {
   const { isDragging, setNodeRef, transform } = useSortable({
