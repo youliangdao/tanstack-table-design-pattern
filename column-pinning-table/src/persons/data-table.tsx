@@ -202,7 +202,6 @@ export function DataTable<TData, TValue>({
                     {headerGroup.headers.map((header) => {
                       const { id, colSpan, column, getContext } = header;
                       const isPinned = column.getIsPinned();
-                      console.log(isPinned === "left");
 
                       return isPinned === "left" ? (
                         <TableHead
