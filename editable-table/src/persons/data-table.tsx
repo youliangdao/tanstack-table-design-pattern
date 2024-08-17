@@ -63,8 +63,6 @@ import {
 } from "../components/ui/dropdown-menu";
 import { DraggableTableHeader } from "./data-table-column-header";
 import { getCommonPinningStyles } from "../lib/getCommonPinningStyle";
-import { FooterCell } from "./data-table-column-footer";
-import { table } from "console";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -284,7 +282,6 @@ export function DataTable<TData, TValue>({
             </TableBody>
           </Table>
         </div>
-        <FooterCell table={table} />
         <div className="flex items-center justify-between px-2">
           <div className="flex-1 text-sm text-muted-foreground">
             {table.getFilteredSelectedRowModel().rows.length} of{" "}
